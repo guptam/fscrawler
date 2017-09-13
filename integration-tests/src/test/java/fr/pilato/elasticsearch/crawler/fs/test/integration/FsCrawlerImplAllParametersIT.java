@@ -34,6 +34,9 @@ import fr.pilato.elasticsearch.crawler.fs.meta.settings.Rest;
 import fr.pilato.elasticsearch.crawler.fs.meta.settings.Server;
 import fr.pilato.elasticsearch.crawler.fs.meta.settings.TimeValue;
 import fr.pilato.elasticsearch.crawler.fs.rest.UploadResponse;
+import fr.pilato.elasticsearch.crawler.fs.util.FsCrawlerUtil;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
 import org.apache.logging.log4j.Level;
 import org.elasticsearch.Version;
 import org.elasticsearch.action.bulk.BulkProcessor;
@@ -44,8 +47,6 @@ import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.http.entity.ContentType;
-import org.elasticsearch.client.http.entity.StringEntity;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilders;
@@ -1203,7 +1204,7 @@ public class FsCrawlerImplAllParametersIT extends AbstractITCase {
                 "}";
         StringEntity entity = new StringEntity(pipeline, ContentType.APPLICATION_JSON);
 
-        elasticsearchClient.getClient().performRequest("PUT", "_ingest/pipeline/" + crawlerName,
+        elasticsearchClient.getLowLevelClient().performRequest("PUT", "_ingest/pipeline/" + crawlerName,
                 Collections.emptyMap(), entity);
 
         Elasticsearch elasticsearch = endCrawlerDefinition(crawlerName);
@@ -1254,7 +1255,7 @@ public class FsCrawlerImplAllParametersIT extends AbstractITCase {
                 "}";
         StringEntity entity = new StringEntity(pipeline, ContentType.APPLICATION_JSON);
 
-        elasticsearchClient.getClient().performRequest("PUT", "_ingest/pipeline/" + crawlerName,
+        elasticsearchClient.getLowLevelClient().performRequest("PUT", "_ingest/pipeline/" + crawlerName,
                 Collections.emptyMap(), entity);
 
         Elasticsearch elasticsearch = endCrawlerDefinition(crawlerName);
