@@ -34,7 +34,6 @@ import fr.pilato.elasticsearch.crawler.fs.meta.settings.Rest;
 import fr.pilato.elasticsearch.crawler.fs.meta.settings.Server;
 import fr.pilato.elasticsearch.crawler.fs.meta.settings.TimeValue;
 import fr.pilato.elasticsearch.crawler.fs.rest.UploadResponse;
-import fr.pilato.elasticsearch.crawler.fs.util.FsCrawlerUtil;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.logging.log4j.Level;
