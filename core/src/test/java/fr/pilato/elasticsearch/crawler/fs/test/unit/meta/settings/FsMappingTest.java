@@ -194,7 +194,8 @@ public class FsMappingTest extends AbstractFSCrawlerTestCase {
                 "            },\n" +
                 "            \"filename\": {\n" +
                 "              \"type\": \"string\",\n" +
-                "              \"index\": \"not_analyzed\"\n" +
+                "              \"index\": \"not_analyzed\",\n" +
+                "              \"store\": true\n" +
                 "            },\n" +
                 "            \"extension\": {\n" +
                 "              \"type\": \"string\",\n" +
@@ -361,7 +362,8 @@ public class FsMappingTest extends AbstractFSCrawlerTestCase {
                 "              \"type\" : \"keyword\"\n" +
                 "            },\n" +
                 "            \"filename\" : {\n" +
-                "              \"type\" : \"keyword\"\n" +
+                "              \"type\" : \"keyword\",\n" +
+                "              \"store\" : true\n" +
                 "            },\n" +
                 "            \"extension\" : {\n" +
                 "              \"type\" : \"keyword\"\n" +
@@ -607,7 +609,8 @@ public class FsMappingTest extends AbstractFSCrawlerTestCase {
                 "              \"type\" : \"keyword\"\n" +
                 "            },\n" +
                 "            \"filename\" : {\n" +
-                "              \"type\" : \"keyword\"\n" +
+                "              \"type\" : \"keyword\",\n" +
+                "              \"store\" : true\n" +
                 "            },\n" +
                 "            \"extension\" : {\n" +
                 "              \"type\" : \"keyword\"\n" +
